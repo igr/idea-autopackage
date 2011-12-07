@@ -2,16 +2,16 @@
 <idea-plugin url="http://code.google.com/p/idea-autopackage/">
 	<name>AutoPackage</name>
 	<id>AutoPackage</id>
-	<description>Auto-package plugin performs live (background) packaging of web content files during development. It works for all web facets in a project.
-		This plugin seems more functional then existing solution in IDEA.</description>
-	<version>1.32</version>
+	<description>
+        Auto-package plugin performs live (background) packaging of web content files during development. It works for all web facets in a project.
+		This plugin seems more functional then existing solution in IDEA.
+    </description>
+	<version>1.35</version>
 	<vendor url="http://code.google.com/p/idea-autopackage" email="igor.spasic@gmail.com" logo="/net/intellij/plugins/autopackage/package.png">Igor Spasic</vendor>
-	<idea-version since-build="93.13"/>
+	<idea-version since-build="111.69"/>
 	<change-notes><![CDATA[
         <ul>
-            <li>+ Handling file deletion</li>
-            <li>+ Status bar messages improved</li>
-            <li>+ Tested on IDEA 10</li>
+            <li>+ Recompiled for IDEA 11</li>
         </ul>]]>
     </change-notes>
 	<depends>com.intellij.javaee</depends>
