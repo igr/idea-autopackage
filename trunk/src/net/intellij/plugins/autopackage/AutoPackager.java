@@ -6,6 +6,7 @@ import com.intellij.javaee.web.artifact.WebArtifactUtil;
 import com.intellij.javaee.web.facet.WebFacet;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.module.StdModuleTypes;
 import com.intellij.openapi.project.Project;
@@ -191,7 +192,9 @@ public class AutoPackager extends VirtualFileAdapter {
 			if (module == null) {
 				continue;
 			}
-			if (module.getModuleType() == StdModuleTypes.JAVA == false) {
+
+            ModuleType moduleType = ModuleType.get(module);
+			if (moduleType != StdModuleTypes.JAVA) {
 				continue;
 			}
 
@@ -274,6 +277,9 @@ public class AutoPackager extends VirtualFileAdapter {
 		File dest = new File(destination);
 		if (dest.exists() == false) {
 			File parent = dest.getParentFile();
+            if (parent == null) {
+                return null;
+            }
 			if (parent.exists() == false) {
 				parent.mkdirs();
 			}
